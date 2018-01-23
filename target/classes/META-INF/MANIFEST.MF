@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Nissan Test
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: rajatmathur
+Implementation-Vendor-Id: com.rajat
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/nissan-mqtt/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
