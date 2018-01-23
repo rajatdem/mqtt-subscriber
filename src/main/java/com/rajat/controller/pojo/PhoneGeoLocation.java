@@ -1,38 +1,36 @@
 package com.rajat.controller.pojo;
 
+import org.json.JSONObject;
+
 public class PhoneGeoLocation {
 
-	private String latitude;
-	private String longitude;
-	private String altitude;
+	public class Coordinates {
+		private double latitude;
+		private double longitude;
+		
+		public Coordinates(double latitude, double longitude) {
+			super();
+			this.latitude = latitude;
+			this.longitude = longitude;
+		}
+		
+		@Override
+		public String toString () {
+			return "\"coordinates\":"+"["+this.latitude+","+this.longitude+"]";
+		}
+	}
+	private Coordinates geo;
 
-	public PhoneGeoLocation(double latitude, double longitude, double altitude) {
+	public PhoneGeoLocation(double latitude, double longitude) {
 		super();
-		this.latitude = latitude+"";
-		this.longitude = longitude+"";
-		this.altitude = altitude+"";
+		this.geo =  new Coordinates (latitude, longitude);
 	}
 	public PhoneGeoLocation() {
 		super();
 	}
-	public String getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
-	}
-	public String getLongitude() {
-		return longitude;
-	}
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-	}
-	public String getAltitude() {
-		return altitude;
-	}
-	public void setAltitude(String altitude) {
-		this.altitude = altitude;
-	}
 	
-	
+	@Override
+	public String toString () {
+		return "{\"geometry\":{\"type\": \"Point\","+geo.toString()+"}";
+	}
 }

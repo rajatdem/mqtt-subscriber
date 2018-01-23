@@ -16,16 +16,13 @@ public class TopicController {
 	private TopicService topicService;
 	
 	@RequestMapping("/topics")
-	public List<PhoneGeoLocation> getAllTopics() {
+	public List<String> getAllTopics() {
 		return topicService.getAllTopics();
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/topics")
-	public void addTopic(@RequestBody PhoneGeoLocation topic) {
+	public void addTopic(@RequestBody String topic) {
 		topicService.addTopic(topic);
 	}
-	
-	public static void addToList() {
-		
-	}
+
 }

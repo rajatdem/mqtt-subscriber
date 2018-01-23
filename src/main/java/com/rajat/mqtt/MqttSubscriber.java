@@ -48,8 +48,8 @@ public class MqttSubscriber implements MqttCallback, InitializingBean {
 			System.out.println("Topic name " + topic + " payload " + payload);
 			try {
 				JSONObject json = new JSONObject(payload);
-				PhoneGeoLocation phone = new PhoneGeoLocation(json.getDouble("longitude"), json.getDouble("latitude"), json.getDouble("altitude"));
-				TopicService.addTopic(phone);
+				PhoneGeoLocation phone = new PhoneGeoLocation(json.getDouble("longitude"), json.getDouble("latitude"));
+				TopicService.addTopic(phone.toString());
 			} catch (JSONException e){
 				e.printStackTrace();
 			}

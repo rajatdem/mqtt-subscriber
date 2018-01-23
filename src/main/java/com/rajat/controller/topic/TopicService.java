@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class TopicService {
 
-	private static List<PhoneGeoLocation> topics = new ArrayList<PhoneGeoLocation>();
+	private static List<String> topics = new ArrayList<String>();
 	
-	public List<PhoneGeoLocation> getAllTopics() {
+	public List<String> getAllTopics() {
 		return topics;
 	}
 
-	public static void addTopic(PhoneGeoLocation topic) {
+	public static void addTopic(String topic) {
 		topics.add(topic);
 	}
 }
